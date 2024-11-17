@@ -1,0 +1,55 @@
+
+<div >
+
+<!--   <button *ngIf="message"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Connectez-vous
+  </button> -->
+<!-- [class]="message ? 'blur-sm pointer-events-none' : ''" class="relative" -->
+  <!-- Contenu de la recette -->
+  <div  class="md:flex sm:space-y-9 lg:space-y-0 gap-10 ">
+     @for (item of allRecips; track $index) {
+      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+        <a href="#">
+            <img class="p-8 rounded-t-lg w-full h-96" [src]="item.imageUrl" alt="product image" />
+        </a>
+        <div class="p-8">
+            <a href="#" class="text-center">
+                <h5 class="text-xl font-bold tracking-tight text-gray-900">
+                  {{item.title}}
+                </h5>
+
+            </a>
+            <div class="space-y-1 mb-5 my-10">
+                <p class="font-semibold text-sm">Ingredients</p>
+                <ul class="text-sm font-thin ml-3">
+                  @for (it of item.ingredients; track $index) {
+                    <li>Farine : 10 KG</li>
+                  }
+                </ul>
+            </div>
+            <div class="flex items-center mb-5 mt-10">
+                <p class="font-semibold text-sm">Preparation Time</p>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">{{item.preparationTime}}</span>
+            </div>
+            <div class="flex items-center mb-5 mt-5">
+                <p class="font-semibold text-sm">Category</p>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">{{item.category}}</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-gray-600 flex items-center justify-center rounded-full text-sm px-5 py-2.5 text-center">
+                  <ng-icon name="featherHeart" class="text-lg"></ng-icon>
+                </a>
+                <div class="space-y-">
+                    <p class="mb-2 text-xs font-thin text-center">Posted By : <span class="font-semibold">{{item.author.name}}</span></p>
+                    <a href="#" class="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                      View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+     }
+  </div>
+</div>

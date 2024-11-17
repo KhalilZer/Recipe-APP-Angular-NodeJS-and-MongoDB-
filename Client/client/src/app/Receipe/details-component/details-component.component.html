@@ -1,0 +1,54 @@
+
+<div >
+
+<!--   <button *ngIf="message"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Connectez-vous
+  </button> -->
+<!-- [class]="message ? 'blur-sm pointer-events-none' : ''" class="relative" -->
+  <!-- Contenu de la recette -->
+  <div  class=" mx-auto w-1/2">
+     <div class="  bg-white border border-gray-200 rounded-lg shadow">
+
+           <div class="flex justify-center">
+             <img class="p-8  w-full h-[700px] rounded-full text-center" [src]="recipeItem.imageUrl" alt="product image" />
+           </div>
+
+        <div class="p-8">
+            <a href="#" class="text-center">
+                <h5 class="text-xl font-bold tracking-tight text-gray-900">
+
+                </h5>
+                <p class="text-4xl font-bold tracking-tight text-gray-900">
+                  {{recipeItem.title}}
+                </p>
+            </a>
+            <div class="space-y-1 mb-5 my-10">
+                <p class="font-semibold text-sm">Ingredients</p>
+                <ul class="text-sm font-thin ml-3 list-disc">
+                  @for (item of recipeItem.ingredients; track $index) {
+                    <li>{{item}}</li>
+                  }
+                </ul>
+            </div>
+            <div class="flex items-center mb-5 mt-10">
+                <p class="font-semibold text-sm">Preparation Time</p>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">{{recipeItem.preparationTime}}</span>
+            </div>
+            <div class="flex items-center mb-5 mt-5">
+                <p class="font-semibold text-sm">Category</p>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">{{recipeItem.category}}</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+
+                <div class="space-y-">
+                    <p class="mb-2 text-xs font-thin text-center">Posted By : <span class="font-semibold">{{recipeItem.author.name}}</span></p>
+                    <p class="mb-2 text-xs font-thin text-center">Email  : <span class="font-semibold">{{recipeItem.author.email}}</span></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

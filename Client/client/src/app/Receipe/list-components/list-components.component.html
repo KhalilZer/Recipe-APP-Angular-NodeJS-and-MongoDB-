@@ -1,0 +1,67 @@
+<div class="m-10">
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+            <tr>
+
+                <th scope="col" class="px-16 py-3">
+                    Image
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Ingredients
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Categorie
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Preparation Time
+                </th>
+                 <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of listRecipe; track $index) {
+              <tr class="bg-white border-b 0">
+
+                <td class="px-16 py-4 font-semibold text-gray-900 ">
+                 <img [src]="item.imageUrl" alt="" class="w-14 h-14 rounded-md">
+                </td>
+                <td class="px-6 py-4 font-semibold text-gray-900 ">
+                    {{item.title}}
+                </td>
+                <td class="px-6 py-4">
+                    <div class="flex gap-2 items-center">
+                      <p class="text-gray-800">{{item.ingredients[0]}}</p>
+                        <button class="bg-gray-200 btn  rounded-lg flex items-center justify-center p-2" (click)="handleDetails(item._id)">
+
+                          <ng-icon name="featherEye" class="text-xl"></ng-icon>
+                        </button>
+                    </div>
+                </td>
+                <td class="px-6 py-4 font-semibold text-gray-900 ">
+                    {{item.category}}
+                </td>
+                <td class="px-6 py-4">
+                    <p  class="font-medium text-red-600 hover:underline">{{item.preparationTime}} / Min</p>
+                </td>
+                 <td class="px-6 py-4">
+                   <div class="flex gap-3">
+                    <button class="bg-green-400 text-white p-2 flex itemsce rounded-lg">
+                      <ng-icon name="featherEdit"></ng-icon>
+                    </button>
+                    <button class="bg-red-400 text-white p-2 rounded-lg" (click)="deleteRecipe(item._id)">
+                      <ng-icon name="featherTrash"></ng-icon>
+                    </button>
+                   </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>
